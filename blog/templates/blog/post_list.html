@@ -6,12 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>KWP LCSW Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
 </head>
 
 <body>
-
+    <h2>Katie Peterson LCSW</h2>
+    <div class="Posts">
+        {% for post in posts %}
+        <div class="Post">
+            <h3 class="Title">{{ post.title }}</h3>
+            <h4 class="Author">{{ post.author }}</h4>
+            <p>published: {{ post.published_date }}</p>
+            <p>
+                {{ post.text|linebreaksbr }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 
 </html>
